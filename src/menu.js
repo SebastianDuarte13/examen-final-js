@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit';
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./ejercicios/ej1IMC.js";
 
-class menu extends HTMLElement {
+class Menu extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
@@ -26,14 +26,13 @@ class menu extends HTMLElement {
                     color: white;
                     border-radius: 5px;
                 }
-
             </style>
             <div class="menu">
-                <h2>Menú de Opciones</h2>
-                <button data-option="1">ejercicio uno</button>
-                <button data-option="2">Opción 2</button>
-                <button data-option="3">Opción 3</button>
-                <button data-option="4">Opción 4</button>
+                <h2>Examen Final</h2>
+                <button data-option="1">Ejercicio uno</button>
+                <button data-option="2">Ejercicio dos</button>
+                <button data-option="3">Ejercicio tres</button>
+                <button data-option="4">Ejercicio cuatro</button>
             </div>
         `;
     }
@@ -48,25 +47,21 @@ class menu extends HTMLElement {
         const option = event.target.getAttribute('data-option');
         switch(option) {
             case '1':
-                //web-component 1
+                this.shadowRoot.appendChild(document.createElement('calcular-peso'));
                 break;
             case '2':
-                //web-component 1
+                // Web component 2
                 break;
             case '3':
-                //web-component 1
+                // Web component 3
                 break;
             case '4':
-                //web-component 1
+                // Web component 4
                 break;
             default:
                 alert("Opción no válida. Por favor, intente de nuevo.");
         }
     }
-
-  
-
-
 }
 
-customElements.define('menu-principal', menu);
+customElements.define('menu-principal', Menu);
