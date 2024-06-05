@@ -1,5 +1,7 @@
 import { LitElement, css, html } from 'lit';
 import "./ejercicios/ej1IMC.js";
+import "./ejercicios/ej2.js";
+
 
 class Menu extends HTMLElement {
     constructor() {
@@ -50,13 +52,13 @@ class Menu extends HTMLElement {
                 this.shadowRoot.appendChild(document.createElement('calcular-peso'));
                 break;
             case '2':
-                // Web component 2
+                this.shadowRoot.appendChild(document.createElement('image-gallery'));
                 break;
             case '3':
-                // Web component 3
+                // Web component 3 falto
                 break;
             case '4':
-                // Web component 4
+                // Web component 4 falto
                 break;
             default:
                 alert("Opción no válida. Por favor, intente de nuevo.");
